@@ -412,6 +412,124 @@ a.add-to-cart:hover{
     opacity: .8
 }
 
+.cart-overlay{
+    display: none;    
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 500;
+    opacity: 0;
+    transition: opacity 0s .4s;
+}
+
+.cart-overlay.open{
+    display: block;
+    opacity: 1;
+}
+
+.sideCart{
+    position: fixed;
+    width: 350px;
+    height: 100vh;
+    background: #fff;
+    z-index: 501;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: -webkit-transform .4s ease-in-out,visibility 0s .4s;
+    transition: transform .4s ease-in-out,visibility 0s .4s;
+}
+
+.sideCart.open{
+    visibility: visible;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: -webkit-transform .4s ease-in-out;
+    transition: transform .4s ease-in-out;
+    transition: transform .4s ease-in-out,-webkit-transform .4s ease-in-out;
+}
+
+.cart-header{
+    background: #000;
+    color: #fff;
+    font-size: 23px;
+    padding: 40px 15px;
+}
+
+// .cart-header a:before{
+//     transition: all .5s .1s;
+//     -webkit-transform: rotate(0);
+//     -ms-transform: rotate(0);
+//     transform: rotate(0);
+//     width: 18px;
+//     height: 18px;
+//     padding: 10px;
+//     display: inline-block;
+//     transition: all .3s;
+//     position: absolute;
+//     top: 30px;
+//     display: inline-block;
+//     width: 18px;
+//     height: 18px;
+//     cursor: pointer;
+//     font-size: 18px;
+//     padding: 10px;
+//         content: "\e605";
+
+// }
+
+.cart-header a{
+    color: #fff;
+}
+
+.cart-item{
+    padding: 20px;
+}
+
+.cart-item:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.cart-item--image{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    float: left;
+}
+
+.cart-item--info{
+    margin-left: 90px; 
+    font-size: 16px;
+}
+.cart-item--info p{
+    margin-bottom: 10px;
+}
+.cart-item--image img{
+    max-width: 100%;
+}
+
+.cart-item--amount{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.cart-item--price{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
 a.menu-item--link {
     height: 35px;
     min-height: 32px;
