@@ -101,10 +101,40 @@
                 <div class="main-content white-bg">
                     
                     <h1>Оформление заказа</h1> 
-                    <div class="sideCart">
-                        <div class="cart-header">
-                            <a href="" class="closeCart"></a>
-                            <span>Корзина</span>
+                    <form action="" class="order-form">
+                        <div class="form-group">
+                            <label for="">Ваши имя и фамилия</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Email <span>(мы дорожим вашей конфиденциальностью)</span></label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Улица, № дома, № кв.</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Город</label>
+                            <input type="text">
+                        </div>                        
+                        <div class="form-group">
+                            <label for="">Номер телефона</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-title">Выберите способ доставки</div>
+                        <div class="form-group">
+                            <label for=""><input type="radio" checked> Бесплатная доставка (При заказе на сумму от 3000 тг.)</label>                           
+                        </div>
+
+                        <input type="submit" value="Отправить заказ" class="red-button">                        
+
+
+                    </form>
+                    <div class="order-cart">
+                        <div class="cart-header">                           
+                            <span>Детали заказа</span>
+                            <a href="" class="edit-link">Изменить</a>
                         </div>
                         <div class="cart-body">
                             <div class="cart-item">
@@ -115,10 +145,7 @@
                                     <p>Гункан с икрой</p>
                                     <div class="cart-item--amount">Количетсво: 11</div>
                                     <div class="cart-item--price">₸890</div>
-                                </div>
-                                <a href="" class="delete-item">
-                                    <img src="images/close-button.png" alt="">
-                                </a>
+                                </div>                                
                             </div>
                             <div class="cart-item">
                                 <div class="cart-item--image">
@@ -128,10 +155,7 @@
                                     <p>Гункан с икрой</p>
                                     <div class="cart-item--amount">Количетсво: 11</div>
                                     <div class="cart-item--price">₸890</div>
-                                </div>
-                                <a href="" class="delete-item">
-                                    <img src="images/close-button.png" alt="">
-                                </a>
+                                </div>                                
                             </div>
                             <div class="cart-item">
                                 <div class="cart-item--image">
@@ -141,13 +165,8 @@
                                     <p>Гункан с икрой</p>
                                     <div class="cart-item--amount">Количетсво: 11</div>
                                     <div class="cart-item--price">₸890</div>
-                                </div>
-                                <a href="" class="delete-item">
-                                    <img src="images/close-button.png" alt="">
-                                </a>
-                            </div>
-
-                            <a href="" class="add-to-cart">Перейти в корзину</a>
+                                </div>                                
+                            </div>                            
                         </div>
                     </div>
                 </div>
