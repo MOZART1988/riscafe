@@ -2,6 +2,7 @@
     $product = get_post(get_query_var('post'));
     $image = get_field('product_image', $product);
     $image_final = wp_get_attachment_image_url($image['id'], 'larges');
+    print_r($_SESSION);
 ?>
 <html data-livestyle-extension="available" class="">
 <head>
@@ -22,6 +23,7 @@
     <meta property="og:title" content="Доставка суши, пиццы Алматы">
     <meta property="og:url" content="https://www.riscafe.com">
     <meta property="og:description" content="Вкусная корейская, японская и европейская кухня. Доставка по Алматы бесплатная.">
+    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/scripts/scripts.js"></script>
 </head>
 
 <body class="">
@@ -45,12 +47,12 @@
                     <div class="product-amount">
                         <span>Количество</span>
                         <select name="" id="">
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
                         </select>
                     </div>
-                    <a href="" class="add-to-cart">Добавить в корзину</a>
+                    <a href="#add_to_card" data-id="<?=$product->ID?>" class="add-to-cart">Добавить в корзину</a>
                 </div>
             </div>
         </div>

@@ -24,6 +24,69 @@ require_once( dirname( dirname( __FILE__ ) ) . '/wp-load.php' );
 /** Allow for cross-domain requests (from the front end). */
 send_origin_headers();
 
+if (!empty($_GET['custom_action'])) {
+
+    if(!session_id()) {
+        session_start();
+    }
+    switch ($_GET['custom_action']) {
+        case 'update_card':
+            if (!empty($_SESSION['card'][0])) {
+                unset($_SESSION['card'][0]);
+            }
+            $count = $_GET['count'];
+            $product_id = $_GET['product_id'];
+            if ($count == 'remove') {
+                unset($_SESSION['card'][$product_id]);
+            } else {
+                $_SESSION['card'][$product_id] += $count;
+            }
+            break;
+        case 'render_card':
+            $result = [];
+            if (!empty($_SESSION['card']) && is_array($_SESSION['card'])) {
+                foreach ($_SESSION['card'] as $id => $count) {
+                    $product = get_post($id);
+                    $image = get_field('product_image', $product);
+                    $image_final = wp_get_attachment_image_url($image['id'], 'small');
+                    $result[] = '
+                <div class="cart-item">
+                <div class="cart-item--image">
+                    <img src="' . $image_final . '" alt="">
+                </div>
+                <div class="cart-item--info">
+                    <p>' . $product->post_title . '</p>
+                    <div class="cart-item--amount">Количетсво: ' . $count . '</div>
+                    <div class="cart-item--price">₸' . get_field('product_price', $product) . '</div>
+                </div>
+                <a href="" class="delete-item" data-id="'.$product->ID.'">
+                    <img src="'. esc_url( get_template_directory_uri() ) .'/images/close-button.png" alt="">
+                </a>
+            </div>
+            ';
+                }
+            } else {
+                $result[] = '<span data-hook="user-free-text" class="user-free-text">Корзина пуста</span>';
+            }
+
+            exit(join("\n", $result));
+            break;
+        case 'update_count':
+            $count = 0;
+            if (!empty($_SESSION['card'])) {
+
+
+                foreach ($_SESSION['card'] as $id => $value) {
+                    $count  = $count + $value;
+                }
+
+            }
+            echo intval($count);
+            exit;
+        break;
+    }
+}
+
 // Require an action parameter
 if ( empty( $_REQUEST['action'] ) )
 	die( '0' );
@@ -101,4 +164,6 @@ if ( is_user_logged_in() ) {
 	do_action( 'wp_ajax_nopriv_' . $_REQUEST['action'] );
 }
 // Default status
+
+
 die( '0' );
