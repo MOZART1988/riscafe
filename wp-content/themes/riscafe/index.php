@@ -35,7 +35,7 @@
         <div class="container">
             <div class="main-content">
                 <h2>Попробуйте наше меню</h2>
-                <?php foreach(get_categories(['hide_empty'=>0, 'parent'=>0]) as $category):?>
+                <?php foreach(get_terms(['hide_empty'=>0, 'taxonomy'=> 'al_product-cat']) as $category):?>
                     <?=riscafe_category_item($category)?>
                 <?php endforeach; ?>
             </div>
