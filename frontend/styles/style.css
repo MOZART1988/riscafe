@@ -880,6 +880,69 @@ a.menu-item--link:hover {
     cursor: pointer;
 }
 
+.contacts-text{
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto 30px;
+    font-family: 'open_sans_condensedbold';
+}
+
+.contacts-text h4{
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.contacts-info{
+    font-family: 'open_sans_condensedbold';
+    font-weight: bold;
+    font-size: 22px;
+    text-align: left;
+    width: 80%;
+    margin: auto;
+}
+
+.contacts-info table{
+    margin: 15px 0;
+}
+
+.map-block{
+    margin-top: 20px;
+}
+
+.contacts-info table td{
+    padding: 10px 20px 10px 0;
+    font-weight: bold;
+}
+
+ymaps{
+    display: inline-block !important;
+}
+
+.feedback-form {
+    width: 500px;
+    margin: 30px auto;
+}
+
+.feedback-form input {
+    display: block;
+    border: 1px solid #c9c9c9;
+    height: 30px;
+    padding: 0 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.feedback-form textarea {
+    width: 100%;
+    border: 1px solid #c9c9c9;
+    margin-bottom: 10px;
+}
+
+.feedback-form .red-button{
+    width: auto;
+}
 @font-face {
     font-family: wf_36e2b1cbf26e4dbd8d499bb8c;
     src: url("https://static.wixstatic.com/ufonts/eeccb4_36e2b1cbf26e4dbd8d499bb8c036b845/woff/file.woff") format("woff"), url("https://static.wixstatic.com/ufonts/eeccb4_36e2b1cbf26e4dbd8d499bb8c036b845/woff2/file.woff2") format("woff2"), url("https://static.wixstatic.com/ufonts/eeccb4_36e2b1cbf26e4dbd8d499bb8c036b845/ttf/file.ttf") format("ttf");
@@ -1017,8 +1080,4 @@ a.menu-item--link:hover {
         top: 110px;
         left: 15px;
     }
-}
-
-* {
-    outline: 1px solid green;
 }
