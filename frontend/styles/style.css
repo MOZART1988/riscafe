@@ -399,7 +399,7 @@ path {
     margin-bottom: 10px;
 }
 
-a.add-to-cart{
+a.add-to-cart, .red-button{
     display: inline-block;
     color: #fff;
     font-size: 15px;
@@ -407,9 +407,121 @@ a.add-to-cart{
     padding: 15px 20px;
     text-transform: uppercase;
     transition: all 0.4s ease 0s;
+    border: 0;
+    box-shadow: 0 0 transparent;
+    cursor: pointer;
 }
-a.add-to-cart:hover{
+.white-button{
+    display: inline-block;
+    color: #DE3A47;
+    font-size: 15px;
+    background-color: #fff;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    transition: all 0.4s ease 0s;
+    border: 0;
+    box-shadow: 0 0 transparent;
+    cursor: pointer;
+}
+
+a.add-to-cart:hover, a.red-button:hover, a.white-button:hover{
     opacity: .8
+}
+
+.cart-comment-block{
+    width: 45%;
+    float: left;
+}
+
+.cart-amount-block{
+    float: right;
+    width: 45%;
+    text-align: right;
+    font-size: 20px;
+}
+.cart-note{
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 5px;
+    margin-bottom: 80px;
+}
+.add-comment{
+    color: #DE3A47;
+    font-size: 14px;
+}
+.cart-info{
+    height: 180px;
+}
+.cart-info:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.comment-form{
+    text-align: right;
+    display: none;
+}
+.comment-form textarea{
+    border: 1px solid #c9c9c9;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: left;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.comment-form textarea:hover{
+    border: 1px solid #000;
+}
+
+.pull-right{
+    float: right;
+}
+
+.cart-table{
+    width: 100%;
+    margin-top: 30px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.cart-table th{
+    color: #333333;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid  #C7C7C7;
+}
+.cart-table td{
+    border-bottom: 1px solid  #C7C7C7;
+    padding: 25px 0;
+    vertical-align: top;
+    position: relative;
+}
+
+.remove-link{
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    color: #333;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.remove-link:hover{
+    text-decoration: none;
+}
+.cart-table .cart-image{
+    width: 152px;
+    height: 152px;
+    object-fit: cover;
+}
+
+.cart-item-title {
+    line-height: 20px;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 400;
 }
 
 .cart-overlay{
@@ -430,6 +542,21 @@ a.add-to-cart:hover{
 .cart-overlay.open{
     display: block;
     opacity: 1;
+}
+
+.opt-quontity .btn{
+    display: inline-block;
+    padding: 0 15px;
+    cursor: pointer;
+    font-size: 22px;
+    vertical-align: middle;
+    color: #DE3A47;
+}
+
+.opt-quontity input{
+    width: 30px;
+    height: 30px;
+    text-align: center;
 }
 
 .sideCart{
@@ -488,7 +615,7 @@ a.add-to-cart:hover{
     border-top: 1px solid #C7C7C7;
 }
 
-.cart-body .add-to-cart{
+.cart-body .red-button{
     margin-left: 20px;
 }
 
