@@ -317,13 +317,15 @@ path {
 .cycle-overlay {
     font-family: tahoma, arial;
     position: absolute;
-    bottom: 0;
+    bottom: 100px;
+    left: 100px;
+    font-size: 14px;
     width: auto;
     z-index: 600;
-    background: black;
-    color: white;
+    background: rgba(255,255,255,.5);
+    color: #000;
     padding: 15px;
-    opacity: .5;
+    opacity: 1;
 }
 
 .main-content {
@@ -849,6 +851,25 @@ a.menu-item--link:hover {
 
 .edit-link:hover {
     text-decoration: none;
+}
+
+.cycle-pager {
+    text-align: center;
+    width: 100%;
+    z-index: 500;
+    position: absolute;
+    bottom: 10px;
+    overflow: hidden;
+}
+
+.cycle-pager span {
+    font-family: arial;
+    font-size: 50px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    color: #ddd;
+    cursor: pointer;
 }
 
 @font-face {
