@@ -6,7 +6,7 @@
     <meta name="fb_admins_meta_tag" content="">
     <link rel="shortcut icon" href="https://static.wixstatic.com/media/eeccb4_d1c2e1000eb74aea97b3e8d6e00035bd%7Emv2.png/v1/fill/w_32%2Ch_32%2Clg_1%2Cusm_0.66_1.00_0.01/eeccb4_d1c2e1000eb74aea97b3e8d6e00035bd%7Emv2.png" type="image/png">
     <link rel="apple-touch-icon" href="https://static.wixstatic.com/media/eeccb4_d1c2e1000eb74aea97b3e8d6e00035bd%7Emv2.png/v1/fill/w_32%2Ch_32%2Clg_1%2Cusm_0.66_1.00_0.01/eeccb4_d1c2e1000eb74aea97b3e8d6e00035bd%7Emv2.png" type="image/png">
-    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/style.css">
+    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/styles/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Anton:n,b,i,bi|Basic:n,b,i,bi|Caudex:n,b,i,bi|Chelsea+Market:n,b,i,bi|Corben:n,b,i,bi|EB+Garamond:n,b,i,bi|Enriqueta:n,b,i,bi|Forum:n,b,i,bi|Fredericka+the+Great:n,b,i,bi|Jockey+One:n,b,i,bi|Josefin+Slab:n,b,i,bi|Jura:n,b,i,bi|Kelly+Slab:n,b,i,bi|Marck+Script:n,b,i,bi|Lobster:n,b,i,bi|Mr+De+Haviland:n,b,i,bi|Niconne:n,b,i,bi|Noticia+Text:n,b,i,bi|Overlock:n,b,i,bi|Patrick+Hand:n,b,i,bi|Play:n,b,i,bi|Sarina:n,b,i,bi|Signika:n,b,i,bi|Spinnaker:n,b,i,bi|Monoton:n,b,i,bi|Sacramento:n,b,i,bi|Cookie:n,b,i,bi|Raleway:n,b,i,bi|Open+Sans+Condensed:300:n,b,i,bi|Amatic+SC:n,b,i,bi|Cinzel:n,b,i,bi|Sail:n,b,i,bi|Playfair+Display:n,b,i,bi|Libre+Baskerville:n,b,i,bi|&amp;subset=latin-ext,cyrillic,japanese,korean,arabic,hebrew,latin" id="font_googleFonts"> -->
     <link rel="stylesheet" href="https://static.parastorage.com/services/santa-resources/resources/viewer/user-site-fonts/v3/languages.css" id="font_langauges">
@@ -35,8 +35,11 @@
         <div class="container">
             <div class="main-content">
                 <h2>Попробуйте наше меню</h2>
-                <?php foreach(get_terms(['hide_empty'=>0, 'taxonomy'=> 'al_product-cat']) as $category):?>
-                    <?=riscafe_category_item($category)?>
+
+                <?php foreach(get_categories(['hide_empty'=>0]) as $category):?>
+                    <?php if (get_field('show_on_mainpage', $category)): ?>
+                        <?=riscafe_category_item($category)?>
+                    <?php endif;?>
                 <?php endforeach; ?>
             </div>
         </div>

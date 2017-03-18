@@ -1,3 +1,8 @@
+<?php
+    $product = get_post(get_query_var('post'));
+    $image = get_field('product_image', $product);
+    $image_final = wp_get_attachment_image_url($image['id'], 'larges');
+?>
 <html data-livestyle-extension="available" class="">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -27,31 +32,80 @@
         </div>
 
     </div>
-    <div class="cycle-slideshow" data-cycle-timeout=5000 data-cycle-caption-plugin=caption2 data-cycle-overlay-fx-out="slideUp" data-cycle-overlay-fx-in="slideDown">
-        <div class="cycle-overlay"></div>
-        <img src="http://malsup.github.io/images/p2.jpg" data-cycle-title="Spring" data-cycle-desc="Sonnenberg Gardens">
-        <img src="http://malsup.github.io/images/p3.jpg" data-cycle-title="ewrwr" data-cycle-desc="wrwerer Gardens">
-        <img src="http://malsup.github.io/images/p4.jpg" data-cycle-title="Sp34234234ring" data-cycle-desc="kiukukyik Gardens">
-    </div>
     <div class="site_wrapper">
         <div class="container">
-            <div class="main-content">
-                <h2><?=get_category(get_query_var('cat'))->name;?></h2>
-                <?php if ( has_term_have_children( get_category(get_query_var('cat'))->cat_ID)):?>
-                    <?php $categories = get_categories(get_category(get_query_var( 'cat' ) )->cat_ID);?>
-                    <?php foreach($categories as $category):?>
-                        <?=riscafe_category_item($category)?>
-                    <?php endforeach; ?>
-                <?php else : ?>
-                    <?php $category = get_category(get_query_var( 'cat' ) );?>
-                    <?php $products = get_posts(['category'=>$category->id]);?>
-                    <?php foreach ($products as $product):?>
-                        <?=riscafe_product_item($product)?>
-                    <?php endforeach;?>
-                <?php endif;?>
+            <div class="main-content white-bg">
+                <div class="product-image">
+                    <img src="<?=$image_final?>" alt="">
+                </div>
+                <div class="product-info">
+                    <h1><?=$product->post_title?></h1>
+                    <div class="product-price">₸<?=get_field('product_price', $product)?></div>
+                    <p><?=$product->post_content?></p>
+                    <div class="product-amount">
+                        <span>Количество</span>
+                        <select name="" id="">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                        </select>
+                    </div>
+                    <a href="" class="add-to-cart">Добавить в корзину</a>
+                </div>
             </div>
         </div>
     </div>
+
+    <div class="cart-overlay"></div>
+    <div class="sideCart">
+        <div class="cart-header">
+            <a href="" class="closeCart"></a>
+            <span>Корзина</span>
+        </div>
+        <div class="cart-body">
+            <div class="cart-item">
+                <div class="cart-item--image">
+                    <img src="images/item1.jpg" alt="">
+                </div>
+                <div class="cart-item--info">
+                    <p>Гункан с икрой</p>
+                    <div class="cart-item--amount">Количетсво: 11</div>
+                    <div class="cart-item--price">₸890</div>
+                </div>
+                <a href="" class="delete-item">
+                    <img src="images/close-button.png" alt="">
+                </a>
+            </div>
+            <div class="cart-item">
+                <div class="cart-item--image">
+                    <img src="images/item1.jpg" alt="">
+                </div>
+                <div class="cart-item--info">
+                    <p>Гункан с икрой</p>
+                    <div class="cart-item--amount">Количетсво: 11</div>
+                    <div class="cart-item--price">₸890</div>
+                </div>
+                <a href="" class="delete-item">
+                    <img src="images/close-button.png" alt="">
+                </a>
+            </div>
+            <div class="cart-item">
+                <div class="cart-item--image">
+                    <img src="images/item1.jpg" alt="">
+                </div>
+                <div class="cart-item--info">
+                    <p>Гункан с икрой</p>
+                    <div class="cart-item--amount">Количетсво: 11</div>
+                    <div class="cart-item--price">₸890</div>
+                </div>
+                <a href="" class="delete-item">
+                    <img src="images/close-button.png" alt="">
+                </a>
+            </div>
+
+            <a href="" class="add-to-cart">Перейти в корзину</a>
+        </div>
+    </div
     <?=get_footer()?>
 </div>
 </body>
