@@ -372,6 +372,11 @@ path {
     vertical-align: top;
 }
 
+.product-image img{
+    width: 100%;
+    max-width: 100%;
+}
+
 .product-info{
     width: 320px;
     display: inline-block;
