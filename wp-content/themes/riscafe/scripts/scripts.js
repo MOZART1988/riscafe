@@ -143,4 +143,25 @@ $(document).ready(function() {
             }
         });
 	}
+
+	$('#order-form').on("submit", function(){
+	    var form = $(this);
+        $.ajax({
+            url: "/wp-admin/admin-ajax.php?custom_action=send_order",
+            type: "POST",
+            dataType: 'html',
+            data: form.serialize(),
+            success: function (data) {
+
+
+                if (data == 'success') {
+                    $('.main-content.white-bg').html('<h1>Спасибо за Ваш заказ! Мы обязательно свяжемся с Вами в ближайшее время</h1>');
+                } else {
+                    $('.main-content.white-bg').html('<h1>Что - то пошло не так, попробуйте снова</h1>');
+                }
+
+            }
+        });
+	    return false;
+    });
 });

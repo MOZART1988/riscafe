@@ -99,6 +99,34 @@ if (!empty($_GET['custom_action'])) {
             $id = $_GET['id'];
             $_SESSION['card'][$id]--;
         break;
+        case 'send_order':
+            $body = [];
+            if (!empty($_SESSION['card'])) {
+                $body[] = '<p>'.$_get['name'].'</p>';
+                $body[] = '<p>'.$_POST['email'].'</p>';
+                $body[] = '<p>'.$_POST['adress'].'</p>';
+                $body[] = '<p>'.$_POST['city'].'</p>';
+                $body[] = '<p>'.$_POST['phone'].'</p>';
+
+                $summ = 0;
+                foreach ($_SESSION['card'] as $id => $count) {
+                    $summ += $value * get_field('product_price', $product);
+                    $product = get_post($id);
+                    $body[] = '<p>'.$product->post_title.'------'.$count.'/<span>Цена: ₸<?=get_field(\'product_price\', $product)?></span></p>';
+                }
+                $body[] = '<p>Итого : '.$summ.'</p>';
+
+                if (wp_mail('wfwdave@gmail.com', 'Новый заказ в магазине RisCafe', join("\n", $body))) {
+                    unset($_SESSION['card']);
+                    exit('success');
+                } else {
+                    exit('fail');
+                }
+            } else {
+                exit('fail');
+            }
+
+        break;
     }
 }
 

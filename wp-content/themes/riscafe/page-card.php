@@ -70,7 +70,7 @@ if (!session_id()) {
                     <div class="cart-amount-block">
                         Сумма: <span></span>
                         <div class="cart-note">Бесплатная доставка при заказе на сумму от 3 000 тенге.</div>
-                        <a href="" class="red-button pull-right">Оформить заявку</a>
+                        <a href="/order/" class="red-button pull-right">Оформить заявку</a>
                     </div>
                 </div>
 
