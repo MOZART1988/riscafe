@@ -838,6 +838,7 @@ body.has-overlay{
 .category-menu-item img {
     max-width: 100%;
     margin-bottom: 10px;
+    width: 100%;
 }
 
 .category-menu-link {
@@ -845,6 +846,37 @@ body.has-overlay{
     padding: 0 15px;
     margin-bottom: 10px;
     color: #000;
+}
+
+.lanch-menu-item{
+    width: 231px;
+    height: 404px;
+    background: url(../images/biznes-bg.png), url(../images/skrew.png) 5% 3% no-repeat, url(../images/skrew.png) 95% 3% no-repeat, url(../images/skrew.png) 5% 97% no-repeat,  url(../images/skrew.png) 95% 97% no-repeat; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.53), inset 0 0 6px 0 rgba(255, 255, 255, 0.59), inset 0 1px 0 0 rgba(255, 255, 255, 0.92), inset 0 0 5px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    font-family: Lobster;
+    font-size: 24px;
+    padding: 5px 15px;
+    box-sizing: border-box;
+    margin: 0 20px 10px;
+}
+
+.lanch-title{
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.lanch-menu-item p{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 3px;
+}
+
+.lanch-menu-item ul{
+    font-size: 18px;
+    margin-bottom: 3px;
 }
 
 .item-price {
