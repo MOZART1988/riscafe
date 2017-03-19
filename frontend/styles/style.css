@@ -394,8 +394,10 @@ path {
 }
 
 .product-price {
-    font-size: 26px;
+    font-size: 24px;
     margin-bottom: 15px;
+    color: rgb(87, 87, 87);
+    font-family: 'open_sanscondensed_light';
 }
 
 .product-amount {
@@ -760,16 +762,39 @@ a.menu-item--link:hover {
     flex-direction: row;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .category-menu-item {
-    width: 24%;
+    width: 23%;
     display: inline-block;
-    margin: 2px 2px;
+    margin: 5px 8px;
     border: 1px solid #000;
     background-color: transparent;
     font-size: 17px;
-    vertical-align: top
+    vertical-align: top;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.category-menu-item:hover{
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
+}
+
+.addtocart-black{
+    color: #fff;
+    background: #000;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    font-size: 14px;
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+}
+
+.addtocart-black:hover{
+    opacity: .6
 }
 
 .category-menu-item img {
@@ -880,7 +905,7 @@ a.menu-item--link:hover {
     cursor: pointer;
 }
 
-.contacts-text{
+.contacts-text {
     font-weight: bold;
     font-size: 22px;
     text-align: center;
@@ -889,12 +914,12 @@ a.menu-item--link:hover {
     font-family: 'open_sans_condensedbold';
 }
 
-.contacts-text h4{
+.contacts-text h4 {
     font-size: 24px;
     margin-bottom: 15px;
 }
 
-.contacts-info{
+.contacts-info {
     font-family: 'open_sans_condensedbold';
     font-weight: bold;
     font-size: 22px;
@@ -903,20 +928,20 @@ a.menu-item--link:hover {
     margin: auto;
 }
 
-.contacts-info table{
+.contacts-info table {
     margin: 15px 0;
 }
 
-.map-block{
+.map-block {
     margin-top: 20px;
 }
 
-.contacts-info table td{
+.contacts-info table td {
     padding: 10px 20px 10px 0;
     font-weight: bold;
 }
 
-ymaps{
+ymaps {
     display: inline-block !important;
 }
 
@@ -940,7 +965,7 @@ ymaps{
     margin-bottom: 10px;
 }
 
-.feedback-form .red-button{
+.feedback-form .red-button {
     width: auto;
 }
 
@@ -964,30 +989,30 @@ a.menu-toggle {
         top: 0;
         left: 0;
         z-index: 12;
-        background: rgba(0,0,0,.95);
+        background: rgba(0, 0, 0, .95);
         visibility: hidden;
         -webkit-transform: translateY(-100%);
         transform: translateY(-100%);
-        -webkit-transition: -webkit-transform .4s ease-in-out,visibility 0s .4s;
-        transition: transform .4s ease-in-out,visibility 0s .4s;
+        -webkit-transition: -webkit-transform .4s ease-in-out, visibility 0s .4s;
+        transition: transform .4s ease-in-out, visibility 0s .4s;
         z-index: 1000;
         padding: 80px 10px 20px;
         box-sizing: border-box;
-        overflow: scroll; 
+        overflow: scroll;
     }
-    .main-nav.open{
+    .main-nav.open {
         visibility: visible;
         -webkit-transform: translateY(0);
         transform: translateY(0);
         -webkit-transition: -webkit-transform .4s ease-in-out;
         transition: transform .4s ease-in-out;
-        transition: transform .4s ease-in-out,-webkit-transform .4s ease-in-out;
+        transition: transform .4s ease-in-out, -webkit-transform .4s ease-in-out;
     }
-    .main-nav li{
+    .main-nav li {
         display: block !important;
         margin-bottom: 5px;
     }
-    .main-nav li.has-child>a:before{
+    .main-nav li.has-child>a:before {
         content: "";
         position: absolute;
         border: solid 11px transparent;
@@ -998,8 +1023,7 @@ a.menu-toggle {
         right: 15px;
         bottom: 50%;
     }
-
-    .main-nav ul li a{
+    .main-nav ul li a {
         display: block;
         font-size: 20px;
         max-width: 100%;
@@ -1146,7 +1170,7 @@ a.menu-toggle {
         margin-bottom: 12px;
         margin: 0 20px 12px;
     }
-    .header-info{
+    .header-info {
         width: 50%;
     }
     .header-info {
@@ -1155,29 +1179,29 @@ a.menu-toggle {
         padding: 0 10px;
         box-sizing: border-box;
     }
-    .cart-widget-proportion{
+    .cart-widget-proportion {
         position: absolute;
         top: 90px;
         left: 15px;
     }
-    .map-block img{
+    .map-block img {
         max-width: 100%;
     }
-    .map-block ymaps{
+    .map-block ymaps {
         width: 100% !important;
     }
-    .feedback-form{
+    .feedback-form {
         width: 100%;
         padding: 0 15px;
         box-sizing: border-box;
     }
-    .contacts-text{
+    .contacts-text {
         width: 95%;
     }
-    .contacts-info{
+    .contacts-info {
         width: 95%;
     }
-    a.menu-toggle {        
+    a.menu-toggle {
         position: absolute;
         display: inline-block;
         top: 95px;
@@ -1196,9 +1220,9 @@ a.menu-toggle {
     }
     a.menu-toggle .icon-bar:first-child {
         top: 0;
-        transition-duration: .3s,.3s;
-        transition-delay: .3s,0s;
-        transition-property: top,transform;
+        transition-duration: .3s, .3s;
+        transition-delay: .3s, 0s;
+        transition-property: top, transform;
     }
     a.menu-toggle .icon-bar+.icon-bar {
         margin-top: 7px;
@@ -1210,28 +1234,26 @@ a.menu-toggle {
     }
     a.menu-toggle .icon-bar:last-child {
         top: 0;
-        transition-duration: .3s,.3s;
-        transition-delay: .3s,0s;
-        transition-property: top,transform;
+        transition-duration: .3s, .3s;
+        transition-delay: .3s, 0s;
+        transition-property: top, transform;
     }
     a.menu-toggle .icon-bar+.icon-bar {
         margin-top: 7px;
     }
-    .header{
+    .header {
         height: auto;
     }
-    .cycle-slideshow img{
+    .cycle-slideshow img {
         height: 200px;
     }
-    .cycle-slideshow{
+    .cycle-slideshow {
         height: 200px;
     }
-    .main-nav ul li ul{
+    .main-nav ul li ul {
         position: static;
         display: none;
         margin-left: 15px;
         margin-top: 5px;
     }
-
-
 }
