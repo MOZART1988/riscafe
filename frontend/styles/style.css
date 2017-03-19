@@ -602,6 +602,8 @@ a.white-button:hover {
     transform: translateX(100%);
     -webkit-transition: -webkit-transform .4s ease-in-out, visibility 0s .4s;
     transition: transform .4s ease-in-out, visibility 0s .4s;
+    overflow-y: scroll;
+    padding-bottom: 30px;
 }
 
 .sideCart.open {
@@ -649,12 +651,28 @@ a.white-button:hover {
     margin-left: 20px;
 }
 
+.cart-body{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.cart-item{
+    text-align: left;
+}
 .cart-item:after {
     content: "";
     display: table;
     clear: both;
 }
 
+.sideCart-sum{
+    font-size: 26px;
+    padding: 20px;
+    text-align: left;
+}
+.sideCart-sum span{
+    display: block;
+    font-family: 'open_sans_condensedbold';
+}
 .cart-item--image {
     width: 80px;
     height: 80px;
@@ -781,6 +799,9 @@ a.menu-item--link:hover {
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
 
+body.has-overlay{
+    overflow: hidden;
+}
 .addtocart-black{
     color: #fff;
     background: #000;

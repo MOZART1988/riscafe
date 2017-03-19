@@ -2,6 +2,7 @@ $(document).ready(function() {
     var sidecartOpen = function() {
         $('.cart-overlay').toggleClass('open');
         $('.sideCart').toggleClass('open');
+        $('body').toggleClass('has-overlay');
     };
 
 
