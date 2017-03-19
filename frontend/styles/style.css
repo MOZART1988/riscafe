@@ -664,6 +664,13 @@ a.white-button:hover {
     clear: both;
 }
 
+.user-free-text{
+    text-align: left;
+    font-size: 20px;
+        display: block;
+    padding: 20px;
+}
+
 .sideCart-sum{
     font-size: 26px;
     padding: 20px;
