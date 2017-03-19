@@ -1,7 +1,10 @@
 <?php
-    $product = get_post(get_query_var('post'));
-    $image = get_field('product_image', $product);
-    $image_final = wp_get_attachment_image_url($image['id'], 'large');
+$product = get_post(get_query_var('post'));
+$image = get_field('product_image', $product);
+$image_final = wp_get_attachment_image_url($image['id'], 'larges');
+if (!session_id()) {
+    session_start();
+}
 ?>
 <html data-livestyle-extension="available" class="">
 <head>
@@ -31,40 +34,69 @@
         <div class="container">
             <?=get_header()?>
         </div>
-
     </div>
     <div class="site_wrapper">
         <div class="container">
             <div class="main-content white-bg">
-                <div class="product-image">
-                    <img src="<?=$image_final?>" alt="">
-                </div>
-                <div class="product-info">
-                    <h1><?=$product->post_title?></h1>
-                    <div class="product-price">₸<?=get_field('product_price', $product)?></div>
-                    <p><?=$product->post_content?></p>
-                    <div class="product-amount">
-                        <span>Количество</span>
-                        <select name="" id="">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
+
+                <h1>Моя корзина (<span class="card-count"></span>)</h1>
+                <?php if (!empty($_SESSION['card'])):?>
+                <table class="cart-table">
+                    <tr>
+                        <th>товар</th>
+                        <th>наименование</th>
+                        <th>количество</th>
+                        <th>итого</th>
+                    </tr>
+                    <?php foreach ($_SESSION['card'] as $id => $count):?>
+                        <?php
+                        $product = get_post($id);
+                        $image = get_field('product_image', $product);
+                        $image_final = wp_get_attachment_image_url($image['id'], 'small');
+                        ?>
+                        <tr>
+                            <td>
+                                <a href="">
+                                    <img src="<?=$image_final?>" alt="" class="cart-image">
+                                </a>
+                            </td>
+                            <td>
+                                <p class="cart-item-title"><?=$product->post_title?></p>
+                                <span>Цена: ₸<?=get_field('product_price', $product)?></span>
+                                <a href="" class="remove-link">Удалить из корзины</a>
+                            </td>
+                            <td>
+                                <div class="opt-quontity">
+                                    <span class="quont-minus btn">-</span>
+                                    <input type="text" value="1">
+                                    <span class="quont-plus btn">+</span>
+                                </div>
+                            </td>
+                            <td class="for-one-position">₸<span></span></td>
+                        </tr>
+                    <?php endforeach;?>
+                </table>
+                <?php endif;?>
+                <div class="cart-info">
+                    <div class="cart-comment-block">
+                        <a href="" class="add-comment">Добавить комментарий</a>
+                        <form class="comment-form" action="">
+                            <textarea name="" id="" cols="30" rows="6"></textarea>
+                            <a href="" class="cancel-comment white-button">Отменить</a>
+                            <input type="submit" class="red-button" value="Готово">
+                        </form>
                     </div>
-                    <a href="#add_to_card" data-id="<?=$product->ID?>" class="add-to-cart add-card">Добавить в корзину</a>
+                    <div class="cart-amount-block">
+                        Сумма: <span>₸21,970 </span>
+                        <div class="cart-note">Бесплатная доставка при заказе на сумму от 3 000 тенге.</div>
+                        <a href="" class="red-button pull-right">Оформить заявку</a>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
     <?=get_footer()?>
 </div>
 </body>
-
 </html>

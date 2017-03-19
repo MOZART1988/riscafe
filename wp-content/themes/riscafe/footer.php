@@ -1,3 +1,15 @@
+<div class="cart-overlay"></div>
+<div class="sideCart">
+    <div class="cart-header">
+        <a href="" class="closeCart"></a>
+        <span>Корзина</span>
+    </div>
+    <div class="cart-body">
+        <div class="cart-body-ajax">
+        </div>
+        <a href="/card/" class="add-to-cart">Перейти в корзину</a>
+    </div>
+</div>
 <div class="footer">
     <div class="site_wrapper">
         <div class="footer-container">

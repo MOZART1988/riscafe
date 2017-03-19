@@ -1,6 +1,6 @@
 <div class="header" class="s3" id="SITE_HEADER">
     <div class="logo">
-        <a href="https://www.riscafe.com" target="_self">
+        <a href="/" target="_self">
             <img src="https://static.wixstatic.com/media/eeccb4_4a7496c5b7d5481586369ca617fdb304~mv2.png/v1/crop/x_0,y_0,w_1015,h_245/fill/w_339,h_80,al_c,usm_0.66_1.00_0.01/eeccb4_4a7496c5b7d5481586369ca617fdb304~mv2.png"
                  style="width: 339px; height: 80px; object-fit: cover;">
         </a>
@@ -33,7 +33,7 @@
     </div>
     <div class="clearfix"></div>
     <div class="cart-widget-proportion">
-        <a class="cart-widget-button-container" href="https://www.riscafe.com/blank-3">
+        <a class="cart-widget-button-container" href="/card/">
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" viewBox="8.3 0 105.5 126.1"
                  preserveAspectRatio="xMinYMax meet" ng-switch-when="1">
                 <path d="M99.8 28.4c0-1.2-0.9-2-2.1-2h-15c0 3.2 0 7.6 0 8.2 0 1.5-1.2 2.6-2.6 2.9 -1.5 0.3-2.9-0.9-3.2-2.3 0-0.3 0-0.3 0-0.6 0-0.9 0-4.7 0-8.2H40.1c0 3.2 0 7.3 0 8.2 0 1.5-1.2 2.9-2.6 2.9 -1.5 0-2.9-0.9-3.2-2.3 0-0.3 0-0.3 0-0.6 0-0.6 0-5 0-8.2h-15c-1.2 0-2 0.9-2 2L8.3 124c0 1.2 0.9 2.1 2.1 2.1h96.3c1.2 0 2.1-0.9 2.1-2.1L99.8 28.4z"></path>
@@ -47,14 +47,14 @@
     <div class="main-nav">
         <ul>
             <li>
-                <a href="">Главная</a>
+                <a href="/">Главная</a>
             </li>
             <?php foreach (get_categories(['parent' => 2, 'hide_empty' => 0, 'orderby' => 'id', 'order' => ASC]) as $category): ?>
                 <li>
                     <a href="<?= get_term_link($category) ?>"><?= $category->name ?></a>
                     <?php if (has_term_have_children($category->cat_ID)): ?>
                         <ul>
-                            <?php foreach (get_categories($category->cat_ID) as $category): ?>
+                            <?php foreach (get_categories(['child_of'=>$category->cat_ID, 'hide_empty'=>false, 'orderby' => 'id', 'order' => ASC]) as $category): ?>
                                 <li><a href="<?= get_term_link($category) ?>"><?= $category->name ?></a></li>
                             <?php endforeach; ?>
                         </ul>
