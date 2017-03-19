@@ -47,4 +47,22 @@ $(document).ready(function() {
     	$('.comment-form').hide();
     	$('.add-comment').show();
     });
+
+    $('a.menu-toggle').on('click', function(e){
+    	e.preventDefault();
+    	$('.main-nav').toggleClass('open');
+    });
+
+    $('a.close-menu').on('click', function(e){
+    	e.preventDefault();
+    	$('.main-nav').toggleClass('open');
+    });
+
+    $('.main-nav li.has-child>a').on('click', function(e){
+    	e.preventDefault();
+    	$(this).next('ul').slideToggle();
+    });
+
+
+
 });
