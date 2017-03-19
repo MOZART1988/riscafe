@@ -7,6 +7,7 @@
     <div class="cart-body">
         <div class="cart-body-ajax">
         </div>
+        <div class="sideCart-sum">Сумма <span>₸25000</span></div>
         <a href="/card/" class="add-to-cart">Перейти в корзину</a>
     </div>
 </div>
