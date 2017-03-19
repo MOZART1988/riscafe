@@ -102,7 +102,7 @@ if (!empty($_GET['custom_action'])) {
         case 'send_order':
             $body = [];
             if (!empty($_SESSION['card'])) {
-                $body[] = '<p>'.$_get['name'].'</p>';
+                $body[] = '<p>'.$_POST['name'].'</p>';
                 $body[] = '<p>'.$_POST['email'].'</p>';
                 $body[] = '<p>'.$_POST['adress'].'</p>';
                 $body[] = '<p>'.$_POST['city'].'</p>';
@@ -126,6 +126,18 @@ if (!empty($_GET['custom_action'])) {
                 exit('fail');
             }
 
+        break;
+        case 'send_feedback':
+            $body = [];
+            $body[] = '<p>Имя '.$_POST['name'].'</p>';
+            $body[] = '<p>Email '.$_POST['email'].'</p>';
+            $body[] = '<p>Сообщение '.$_POST['message'].'</p>';
+
+            if (wp_mail('wfwdave@gmail.com', 'Новое сообщение от клиента', join("\n", $body))) {
+                exit('success');
+            } else {
+                exit('fail');
+            };
         break;
     }
 }

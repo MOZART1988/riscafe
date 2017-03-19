@@ -4,7 +4,23 @@ $(document).ready(function() {
     var sidecartOpen = function () {
         $('.cart-overlay').toggleClass('open');
         $('.sideCart').toggleClass('open');
+        $('body').toggleClass('has-overlay');
     };
+
+    $('a.menu-toggle').on('click', function(e){
+        e.preventDefault();
+        $('.main-nav').toggleClass('open');
+    });
+
+    $('a.close-menu').on('click', function(e){
+        e.preventDefault();
+        $('.main-nav').toggleClass('open');
+    });
+
+    $('.main-nav li.has-child>a').on('click', function(e){
+        e.preventDefault();
+        $(this).next('ul').slideToggle();
+    })
 
 
     $('.add-card').on('click', function (e) {
@@ -163,5 +179,26 @@ $(document).ready(function() {
             }
         });
 	    return false;
+    });
+
+    $('#feedback-form').on("submit", function(){
+        var form = $(this);
+        $.ajax({
+            url: "/wp-admin/admin-ajax.php?custom_action=send_feedback",
+            type: "POST",
+            dataType: 'html',
+            data: form.serialize(),
+            success: function (data) {
+
+
+                if (data == 'success') {
+                    $('.ajax-form').html('<div class="contacts-info"><p>Спасибо за Ваше сообщение</p></div>');
+                } else {
+                    $('.ajax-form').html('<div class="contacts-info"><p>Что - то пошло не так, попробуйте снова</p></div>');
+                }
+
+            }
+        });
+        return false;
     });
 });

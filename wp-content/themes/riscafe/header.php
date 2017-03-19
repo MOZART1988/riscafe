@@ -1,8 +1,7 @@
 <div class="header" class="s3" id="SITE_HEADER">
     <div class="logo">
         <a href="/" target="_self">
-            <img src="https://static.wixstatic.com/media/eeccb4_4a7496c5b7d5481586369ca617fdb304~mv2.png/v1/crop/x_0,y_0,w_1015,h_245/fill/w_339,h_80,al_c,usm_0.66_1.00_0.01/eeccb4_4a7496c5b7d5481586369ca617fdb304~mv2.png"
-                 style="width: 339px; height: 80px; object-fit: cover;">
+            <img src="https://static.wixstatic.com/media/eeccb4_4a7496c5b7d5481586369ca617fdb304~mv2.png/v1/crop/x_0,y_0,w_1015,h_245/fill/w_339,h_80,al_c,usm_0.66_1.00_0.01/eeccb4_4a7496c5b7d5481586369ca617fdb304~mv2.png">
         </a>
     </div>
     <div class="social-icons">
@@ -21,6 +20,13 @@
                  style="width: 34px; height: 34px; object-fit: cover;">
         </a>
     </div>
+    <!-- иконка открывание -->
+    <a href="" class="menu-toggle">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </a>
+    <!-- иконка открывание -->
     <div class="header-info">
         <p>Доставка:</p>
         <p>8 (727) 275 4426</p>
@@ -50,7 +56,7 @@
                 <a href="/">Главная</a>
             </li>
             <?php foreach (get_categories(['parent' => 2, 'hide_empty' => 0, 'orderby' => 'id', 'order' => ASC]) as $category): ?>
-                <li>
+                <li <?=has_term_have_children($category->cat_ID) ? 'class="has-child"' : '' ?>>
                     <a href="<?= get_term_link($category) ?>"><?= $category->name ?></a>
                     <?php if (has_term_have_children($category->cat_ID)): ?>
                         <ul>
@@ -62,8 +68,17 @@
                 </li>
             <?php endforeach; ?>
             <li>
-                <a href="">Контакты</a>
+                <a href="/lunch/">Бизнес ланч</a>
+            </li>
+            <li>
+                <a href="/contacts/">Контакты</a>
             </li>
         </ul>
+        <!-- иконка закрывания -->
+        <a href="" class="close-menu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <!-- иконка закрывания -->
     </div>
 </div>

@@ -1,7 +1,7 @@
 <?php
-    $product = get_post(get_query_var('post'));
-    $image = get_field('product_image', $product);
-    $image_final = wp_get_attachment_image_url($image['id'], 'large');
+$product = get_post(get_query_var('post'));
+$image = get_field('product_image', $product);
+$image_final = wp_get_attachment_image_url($image['id'], 'large');
 ?>
 <html data-livestyle-extension="available" class="">
 <?=render_head()?>
