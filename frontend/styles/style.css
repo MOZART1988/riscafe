@@ -528,7 +528,7 @@ a.white-button:hover {
     position: relative;
 }
 
-.cart-table td:first-child{
+.cart-table td:first-child {
     width: 180px;
 }
 
@@ -655,41 +655,45 @@ a.white-button:hover {
     margin-left: 20px;
 }
 
-.cart-body{
+.cart-body {
     text-align: center;
     margin-bottom: 30px;
 }
-.cart-item{
+
+.cart-item {
     text-align: left;
 }
+
 .cart-item:after {
     content: "";
     display: table;
     clear: both;
 }
 
-.user-free-text{
+.user-free-text {
     text-align: left;
     font-size: 20px;
-        display: block;
+    display: block;
     padding: 20px;
 }
 
-h1.cart-title{
+h1.cart-title {
     font-size: 28px;
     color: #000;
     // font-family: 'open_sans_condensedbold';
 }
 
-.sideCart-sum{
+.sideCart-sum {
     font-size: 26px;
     padding: 20px;
     text-align: left;
 }
-.sideCart-sum span{
+
+.sideCart-sum span {
     display: block;
     font-family: 'open_sans_condensedbold';
 }
+
 .cart-item--image {
     width: 80px;
     height: 80px;
@@ -812,14 +816,15 @@ a.menu-item--link:hover {
     padding-bottom: 10px;
 }
 
-.category-menu-item:hover{
+.category-menu-item:hover {
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 1);
 }
 
-body.has-overlay{
+body.has-overlay {
     overflow: hidden;
 }
-.addtocart-black{
+
+.addtocart-black {
     color: #fff;
     background: #000;
     padding: 5px 15px;
@@ -831,7 +836,7 @@ body.has-overlay{
     bottom: 15px;
 }
 
-.addtocart-black:hover{
+.addtocart-black:hover {
     opacity: .6
 }
 
@@ -848,10 +853,10 @@ body.has-overlay{
     color: #000;
 }
 
-.lanch-menu-item{
+.lanch-menu-item {
     width: 231px;
     height: 404px;
-    background: url(../images/biznes-bg.png), url(../images/skrew.png) 5% 3% no-repeat, url(../images/skrew.png) 95% 3% no-repeat, url(../images/skrew.png) 5% 97% no-repeat,  url(../images/skrew.png) 95% 97% no-repeat; 
+    background: url(../images/biznes-bg.png), url(../images/skrew.png) 5% 3% no-repeat, url(../images/skrew.png) 95% 3% no-repeat, url(../images/skrew.png) 5% 97% no-repeat, url(../images/skrew.png) 95% 97% no-repeat;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.53), inset 0 0 6px 0 rgba(255, 255, 255, 0.59), inset 0 1px 0 0 rgba(255, 255, 255, 0.92), inset 0 0 5px 0 rgba(255, 255, 255, 0.2);
     border-radius: 2px;
     font-family: Lobster;
@@ -861,20 +866,20 @@ body.has-overlay{
     margin: 0 20px 10px;
 }
 
-.lanch-title{
+.lanch-title {
     text-align: center;
     text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
     font-size: 32px;
     margin-bottom: 5px;
 }
 
-.lanch-menu-item p{
+.lanch-menu-item p {
     text-align: center;
     font-size: 20px;
     margin-bottom: 3px;
 }
 
-.lanch-menu-item ul{
+.lanch-menu-item ul {
     font-size: 18px;
     margin-bottom: 3px;
 }
@@ -1033,14 +1038,83 @@ ymaps {
     width: 100%;
     border: 1px solid #c9c9c9;
     margin-bottom: 10px;
+    padding: 10px;
 }
 
 .feedback-form .red-button {
     width: auto;
 }
 
+.reviews-block {
+    margin: 30px 0;
+}
+
+.reviews-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: 'open_sans_condensedbold';
+}
+
+.reviews-block{
+    text-align: center;
+}
+
+.review-item {
+    width: 275px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px 10px;
+}
+
+.review-image {
+    width: 50px;
+    height: 50px;
+    float: left;
+    font-family: 
+}
+
+.review-image img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
 a.menu-toggle {
     display: none;
+}
+
+.review-name {
+    font-size: 24px;
+    text-align: left;
+}
+
+.review-text {
+    color: rgb(0, 0, 0);
+    background: rgb(230, 229, 225);
+    border-color: rgb(230, 229, 225);
+    height: 132px;
+    padding: 10px 12px 20px 12px;
+    position: relative;
+    float: left;
+    margin-top: 15px;
+        font-size: 14px;
+    line-height: 1.6;
+    border-radius: 3px;
+    text-align: left;
+}
+
+.review-text:before {
+    content: '';
+    position: absolute;
+    top: -23px;
+    left: 29px;
+    border-style: solid;
+    border-width: 12px 7px;
+    border-color: transparent;
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: inherit;
 }
 
 @font-face {
@@ -1207,9 +1281,8 @@ a.menu-toggle {
         padding: 0 10px;
     }
     .logo img {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
+        width: 300px;
+        height: 71px;
     }
     .logo {
         position: static;
