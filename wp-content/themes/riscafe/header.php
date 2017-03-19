@@ -21,6 +21,13 @@
                  style="width: 34px; height: 34px; object-fit: cover;">
         </a>
     </div>
+    <!-- иконка открывание -->
+    <a href="" class="menu-toggle">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </a>
+    <!-- иконка открывание -->
     <div class="header-info">
         <p>Доставка:</p>
         <p>8 (727) 275 4426</p>
@@ -50,7 +57,7 @@
                 <a href="/">Главная</a>
             </li>
             <?php foreach (get_categories(['parent' => 2, 'hide_empty' => 0, 'orderby' => 'id', 'order' => ASC]) as $category): ?>
-                <li>
+                <li <?=has_term_have_children($category->cat_ID) ? 'class="has-child"' : '' ?>>
                     <a href="<?= get_term_link($category) ?>"><?= $category->name ?></a>
                     <?php if (has_term_have_children($category->cat_ID)): ?>
                         <ul>
@@ -65,5 +72,11 @@
                 <a href="">Контакты</a>
             </li>
         </ul>
+        <!-- иконка закрывания -->
+        <a href="" class="close-menu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <!-- иконка закрывания -->
     </div>
 </div>
