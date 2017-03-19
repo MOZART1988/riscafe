@@ -45,11 +45,13 @@
                         <?=riscafe_category_item($category)?>
                     <?php endforeach; ?>
                 <?php else : ?>
+                    <div class="category-block">
                     <?php $category = get_category(get_query_var( 'cat' ) );?>
-                    <?php $products = get_posts(['category'=>$category->id]);?>
+                    <?php $products = get_posts(['category'=>$category->term_id]);?>
                     <?php foreach ($products as $product):?>
                         <?=riscafe_product_item($product)?>
                     <?php endforeach;?>
+                    </div>
                 <?php endif;?>
             </div>
         </div>
