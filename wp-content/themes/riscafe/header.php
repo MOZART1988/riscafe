@@ -1,8 +1,7 @@
 <div class="header" class="s3" id="SITE_HEADER">
     <div class="logo">
         <a href="/" target="_self">
-            <img src="https://static.wixstatic.com/media/eeccb4_4a7496c5b7d5481586369ca617fdb304~mv2.png/v1/crop/x_0,y_0,w_1015,h_245/fill/w_339,h_80,al_c,usm_0.66_1.00_0.01/eeccb4_4a7496c5b7d5481586369ca617fdb304~mv2.png"
-                 style="width: 339px; height: 80px; object-fit: cover;">
+            <img src="https://static.wixstatic.com/media/eeccb4_4a7496c5b7d5481586369ca617fdb304~mv2.png/v1/crop/x_0,y_0,w_1015,h_245/fill/w_339,h_80,al_c,usm_0.66_1.00_0.01/eeccb4_4a7496c5b7d5481586369ca617fdb304~mv2.png">
         </a>
     </div>
     <div class="social-icons">
@@ -69,7 +68,10 @@
                 </li>
             <?php endforeach; ?>
             <li>
-                <a href="">Контакты</a>
+                <a href="/lunch/">Бизнес ланч</a>
+            </li>
+            <li>
+                <a href="/contacts/">Контакты</a>
             </li>
         </ul>
         <!-- иконка закрывания -->
