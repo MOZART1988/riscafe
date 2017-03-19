@@ -528,6 +528,10 @@ a.white-button:hover {
     position: relative;
 }
 
+.cart-table td:first-child{
+    width: 180px;
+}
+
 .remove-link {
     position: absolute;
     left: 0;
@@ -669,6 +673,12 @@ a.white-button:hover {
     font-size: 20px;
         display: block;
     padding: 20px;
+}
+
+h1.cart-title{
+    font-size: 28px;
+    color: #000;
+    // font-family: 'open_sans_condensedbold';
 }
 
 .sideCart-sum{
