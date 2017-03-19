@@ -66,10 +66,12 @@ $(document).ready(function() {
         count = count < 1 ? 1 : count;
         $input.val(count);
         $input.change();
-        update_card_minus_one($(this).parent().attr('data-id'));
-        update_summ($('.cart-amount-block').find('span'));
-        card_count();
-        calculate_one_position(count, $(this).parent().attr('data-price'), $(this).parent().parent().next().find('.counter'));
+        if ($input.val() > 1) {
+            update_card_minus_one($(this).parent().attr('data-id'));
+            update_summ($('.cart-amount-block').find('span'));
+            card_count();
+            calculate_one_position(count, $(this).parent().attr('data-price'), $(this).parent().parent().next().find('.counter'));
+        }
         return false;
     });
     $('.quont-plus').click(function() {
