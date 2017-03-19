@@ -13,6 +13,12 @@ $(document).ready(function() {
         update_card(id, count, true);
     });
 
+    $('body').on('click', '.addtocart-black', function(e){
+        e.preventDefault();
+        var id = $(this).attr('data-id');
+        update_card(id, 1, true);
+    });
+
     $('body').on('click', '.delete-item', function(e) {
         e.preventDefault();
         var id = $('.delete-item').attr('data-id');
