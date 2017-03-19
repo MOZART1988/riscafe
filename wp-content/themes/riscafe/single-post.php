@@ -39,6 +39,7 @@
                             <option value="10">10</option>
                         </select>
                     </div>
+
                     <a href="#add_to_card" data-id="<?=$product->ID?>" class="add-to-cart add-card">Добавить в корзину</a>
                 </div>
             </div>

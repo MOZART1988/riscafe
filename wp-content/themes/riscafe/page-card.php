@@ -44,16 +44,16 @@ if (!session_id()) {
                             <td>
                                 <p class="cart-item-title"><?=$product->post_title?></p>
                                 <span>Цена: ₸<?=get_field('product_price', $product)?></span>
-                                <a href="" class="remove-link">Удалить из корзины</a>
+                                <a href="#remove-link" data-id="<?=$product->ID?>" class="remove-link">Удалить из корзины</a>
                             </td>
                             <td>
-                                <div class="opt-quontity">
+                                <div class="opt-quontity" data-id="<?=$product->ID?>" data-price="<?=get_field('product_price', $product)?>" data-count="<?=$count?>">
                                     <span class="quont-minus btn">-</span>
-                                    <input type="text" value="1">
+                                    <input type="text" value="<?=$count?>" disabled="disabled">
                                     <span class="quont-plus btn">+</span>
                                 </div>
                             </td>
-                            <td class="for-one-position">₸<span></span></td>
+                            <td class="for-one-position">₸<span class="counter"><?=get_field('product_price', $product) * $count?></span></td>
                         </tr>
                     <?php endforeach;?>
                 </table>
@@ -68,7 +68,7 @@ if (!session_id()) {
                         </form>
                     </div>
                     <div class="cart-amount-block">
-                        Сумма: <span>₸21,970 </span>
+                        Сумма: <span></span>
                         <div class="cart-note">Бесплатная доставка при заказе на сумму от 3 000 тенге.</div>
                         <a href="" class="red-button pull-right">Оформить заявку</a>
                     </div>

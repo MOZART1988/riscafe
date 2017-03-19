@@ -84,6 +84,21 @@ if (!empty($_GET['custom_action'])) {
             echo intval($count);
             exit;
         break;
+        case 'update_summ':
+            $summ=0;
+            if (!empty($_SESSION['card'])) {
+                foreach ($_SESSION['card'] as $id => $value) {
+                    $product = get_post($id);
+                    $summ += $value * get_field('product_price', $product);
+                }
+            }
+            echo '₸'.intval($summ);
+            exit;
+        break;
+        case 'card-minus-one':
+            $id = $_GET['id'];
+            $_SESSION['card'][$id]--;
+        break;
     }
 }
 
