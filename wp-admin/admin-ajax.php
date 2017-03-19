@@ -101,6 +101,7 @@ if (!empty($_GET['custom_action'])) {
         break;
         case 'send_order':
             $body = [];
+            $summ = 0;
             if (!empty($_SESSION['card'])) {
                 $body[] = '<p>Имя '.$_POST['name'].'</p>';
                 $body[] = '<p>Email '.$_POST['email'].'</p>';
@@ -108,9 +109,8 @@ if (!empty($_GET['custom_action'])) {
                 $body[] = '<p>Город '.$_POST['city'].'</p>';
                 $body[] = '<p>Телефон '.$_POST['phone'].'</p>';
 
-                $summ = 0;
                 foreach ($_SESSION['card'] as $id => $count) {
-                    $summ += $count * get_field('product_price', $product);
+                    $summ = $summ + $count * get_field('product_price', $product);
                     $product = get_post($id);
                     $body[] = '<p>Детали корзины</p>';
                     $body[] = '<p>'.$product->post_title.'------ '.$count.' порций/<span>Цена: ₸'.get_field('product_price', $product).'</span></p>';
