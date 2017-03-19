@@ -102,21 +102,22 @@ if (!empty($_GET['custom_action'])) {
         case 'send_order':
             $body = [];
             if (!empty($_SESSION['card'])) {
-                $body[] = '<p>'.$_POST['name'].'</p>';
-                $body[] = '<p>'.$_POST['email'].'</p>';
-                $body[] = '<p>'.$_POST['adress'].'</p>';
-                $body[] = '<p>'.$_POST['city'].'</p>';
-                $body[] = '<p>'.$_POST['phone'].'</p>';
+                $body[] = '<p>Имя '.$_POST['name'].'</p>';
+                $body[] = '<p>Email '.$_POST['email'].'</p>';
+                $body[] = '<p>Адрес '.$_POST['adress'].'</p>';
+                $body[] = '<p>Город '.$_POST['city'].'</p>';
+                $body[] = '<p>Телефон '.$_POST['phone'].'</p>';
 
                 $summ = 0;
                 foreach ($_SESSION['card'] as $id => $count) {
-                    $summ += $value * get_field('product_price', $product);
+                    $summ += $count * get_field('product_price', $product);
                     $product = get_post($id);
-                    $body[] = '<p>'.$product->post_title.'------'.$count.'/<span>Цена: ₸<?=get_field(\'product_price\', $product)?></span></p>';
+                    $body[] = '<p>Детали корзины</p>';
+                    $body[] = '<p>'.$product->post_title.'------ '.$count.' порций/<span>Цена: ₸'.get_field('product_price', $product).'</span></p>';
                 }
                 $body[] = '<p>Итого : '.$summ.'</p>';
 
-                if (wp_mail('wfwdave@gmail.com', 'Новый заказ в магазине RisCafe', join("\n", $body))) {
+                if (wp_mail(get_option('admin_email'), 'Новый заказ в магазине RisCafe', join("\n", $body))) {
                     unset($_SESSION['card']);
                     exit('success');
                 } else {
@@ -133,7 +134,7 @@ if (!empty($_GET['custom_action'])) {
             $body[] = '<p>Email '.$_POST['email'].'</p>';
             $body[] = '<p>Сообщение '.$_POST['message'].'</p>';
 
-            if (wp_mail('wfwdave@gmail.com', 'Новое сообщение от клиента', join("\n", $body))) {
+            if (wp_mail(get_option('admin_email'), 'Новое сообщение от клиента', join("\n", $body))) {
                 exit('success');
             } else {
                 exit('fail');
