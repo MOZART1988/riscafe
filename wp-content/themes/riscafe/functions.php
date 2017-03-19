@@ -67,8 +67,8 @@ if (!function_exists('riscafe_product_item')) :
         $image_final = wp_get_attachment_image_url($image['id'], 'medium');
         $result = [];
         $result[] = '<div class="category-menu-item">';
-        $result[] = '<a href="' . get_post_permalink($product->id) . '"><img src="'.$image_final.'" alt=""></a>';
-        $result[] = '<a href="' . get_post_permalink($product->id) . '" class="category-menu-link">'.$product->post_title.' ></a>';
+        $result[] = '<a href="' . get_post_permalink($product) . '"><img src="'.$image_final.'" alt=""></a>';
+        $result[] = '<a href="' . get_post_permalink($product) . '" class="category-menu-link">'.$product->post_title.' </a>';
         $result[] = '<span class="item-price">₸'.get_field('product_price', $product).'</span>';
         $result[] = '<a href="" class="addtocart-black" data-id="'.$product->ID.'">в корзину</a>';
         $result[] = '</div>';

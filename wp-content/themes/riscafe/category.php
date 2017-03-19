@@ -29,8 +29,8 @@
                 <?php else : ?>
                     <div class="category-block">
                     <?php $category = get_category(get_query_var( 'cat' ) );?>
-                    <?php $products = get_posts(['category'=>$category->term_id]);?>
-                    <?php foreach ($products as $product):?>
+                    <?php $products = get_posts(['category'=>$category->term_id, 'posts_per_page'=>'50', 'order'=>'ASC']);?>
+                    <?php foreach ($products as $product): setup_postdata($product)?>
                         <?=riscafe_product_item($product)?>
                     <?php endforeach;?>
                     </div>

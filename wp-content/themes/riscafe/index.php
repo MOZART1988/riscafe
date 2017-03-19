@@ -25,6 +25,10 @@
                         <?=riscafe_category_item($category)?>
                     <?php endif;?>
                 <?php endforeach; ?>
+                <div class="menu-item">
+                    <a href="/lunch/"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/lunch.jpg" alt=""></a>
+                    <a href="/lunch/" class="menu-item--link">Бизнес ланчи ></a>
+                </div>
             </div>
         </div>
     </div>
