@@ -190,6 +190,10 @@ body {
     margin-bottom: 7px;
 }
 
+.header-info p a{
+    color: #000;
+}
+
 .social-icons {
     float: right;
     margin: 20px 90px 0 5px;
@@ -223,6 +227,7 @@ body {
     transform: translateY(-100%);
     background: #fff;
     z-index: 500;
+    visibility: hidden;
 // transition:  0.4s ease 0s;
 }
 
@@ -240,7 +245,7 @@ body {
     background: #fff;
     position: relative;
     z-index: 10;
-    padding: 0 10px;
+    padding: 0 8px;
     font: normal normal 700 22px/1.4em wfont_eeccb4_36e2b1cbf26e4dbd8d499bb8c036b845, wf_36e2b1cbf26e4dbd8d499bb8c, orig_bonzai_regular;
 }
 
@@ -269,6 +274,7 @@ body {
 .main-nav ul li:hover ul {
     opacity: 1;
     transform: translateY(0);
+    visibility: visible;
 }
 
 .clearfix {
@@ -1052,6 +1058,20 @@ a.menu-toggle {
     .site_wrapper {
         width: 100%;
     }
+    .sideCart{
+        width: 100%;
+    }
+    .order-form{
+        width: 100%;
+    }
+    .order-cart{
+        width: 100%;
+        margin-top: 20px;
+    }
+    .header-info p a{
+        color: #1700ee;
+    }
+
     .main-nav {
         position: fixed;
         width: 100%;
@@ -1174,7 +1194,6 @@ a.menu-toggle {
     }
     h1 {
         width: 100%;
-        float: left;
         margin-top: 10px;
     }
     .cart-table .cart-image {

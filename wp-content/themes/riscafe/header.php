@@ -29,14 +29,14 @@
     <!-- иконка открывание -->
     <div class="header-info">
         <p>Доставка:</p>
-        <p>8 (727) 275 4426</p>
-        <p>8 (708) 070 9870</p>
+        <p><a  href="tel:87272754426">8 (727) 275 4426</a></p>
+        <p><a  href="tel:87080709870">8 (708) 070 9870</a></p>
     </div>
-    <div class="header-info">
+    <!-- <div class="header-info">
         <p>Кафе "Рис":</p>
         <p>8 (727) 275 4688</p>
         <p>8 (701) 218 7013</p>
-    </div>
+    </div> -->
     <div class="clearfix"></div>
     <div class="cart-widget-proportion">
         <a class="cart-widget-button-container" href="/card/">

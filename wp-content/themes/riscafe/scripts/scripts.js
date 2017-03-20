@@ -17,11 +17,13 @@ $(document).ready(function() {
         $('.main-nav').toggleClass('open');
     });
 
-    $('.main-nav li.has-child>a').on('click', function(e){
-        e.preventDefault();
-        $(this).next('ul').slideToggle();
-    })
-
+    if ($(document).width() < 675) {
+       $('.main-nav li.has-child>a').on('click', function(e){
+            e.preventDefault();
+            $('.main-nav li.has-child>ul').slideUp();
+            $(this).next('ul').slideToggle();
+        })
+    }; 
 
     $('.add-card').on('click', function (e) {
     	e.preventDefault();
