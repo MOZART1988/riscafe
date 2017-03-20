@@ -82,7 +82,7 @@ function generate_slider()
         <img src="'.esc_url( get_template_directory_uri() ).'/images/slide1.jpg" data-cycle-desc="Стейки, шашлыки, крылышки BBQ">
         <img src="'.esc_url( get_template_directory_uri() ).'/images/slide4.jpg" data-cycle-desc="В день рождения 20% скидка на все">
         <img src="'.esc_url( get_template_directory_uri() ).'/images/slide5.jpg" data-cycle-desc="Суши, роллы и целые сеты">
-        <img src="'.esc_url( get_template_directory_uri() ).'/images/slide2.jpg" data-cycle-desc="Вкуснейщая пицца">
+        <img src="'.esc_url( get_template_directory_uri() ).'/images/slide2.jpg" data-cycle-desc="Вкуснейшая пицца">
         <img src="'.esc_url( get_template_directory_uri() ).'/images/slide3.jpg" data-cycle-desc="При заказе на сумму от 5000 тенге - напиток в подарок">
     </div>
     ';
