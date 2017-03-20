@@ -7,17 +7,11 @@
     <div class="social-icons">
         <a href="https://www.instagram.com/ricecafesi/" target="_blank"
            data-content="https://www.instagram.com/ricecafesi/">
-            <img id="comp-izmes4zs0imageimageimage" alt=""
-                 data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-izmes4zs.0.0.0.0.$image"
-                 src="https://static.wixstatic.com/media/eeccb4_e1001544ca9c4f8286be1d44cafc10c8~mv2.jpg/v1/fill/w_34,h_34,al_c,q_80,usm_0.66_1.00_0.01/eeccb4_e1001544ca9c4f8286be1d44cafc10c8~mv2.webp"
-                 style="width: 34px; height: 34px; object-fit: cover;">
+            <img src="<?=esc_url( get_template_directory_uri() )?>/images/insta.png">
         </a>
         <a href="https://www.facebook.com/ricecafesi/" target="_blank"
            data-content="https://www.facebook.com/ricecafesi/">
-            <img id="comp-izmes4zs1imageimageimage" alt=""
-                 data-reactid=".0.$SITE_ROOT.$desktop_siteRoot.$SITE_HEADER.1.1.$comp-izmes4zs.0.1.0.0.$image"
-                 src="https://static.wixstatic.com/media/e316f544f9094143b9eac01f1f19e697.png/v1/fill/w_34,h_34,al_c,usm_0.66_1.00_0.01/e316f544f9094143b9eac01f1f19e697.png"
-                 style="width: 34px; height: 34px; object-fit: cover;">
+             <img src="<?=esc_url( get_template_directory_uri() )?>/images/facebook.png">
         </a>
     </div>
     <!-- иконка открывание -->
@@ -28,9 +22,8 @@
     </a>
     <!-- иконка открывание -->
     <div class="header-info">
-        <p>Доставка:</p>
-        <p><a  href="tel:87272754426">8 (727) 275 4426</a></p>
-        <p><a  href="tel:87080709870">8 (708) 070 9870</a></p>
+        <p style="display: block;">Доставка:</p>
+        <p><a  href="tel:87272754426">8 (727) 275 4426</a>, <a  href="tel:87080709870">8 (708) 070 9870</a></p>
     </div>
     <!-- <div class="header-info">
         <p>Кафе "Рис":</p>

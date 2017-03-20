@@ -19,9 +19,8 @@ $(document).ready(function() {
 
     if ($(document).width() < 675) {
        $('.main-nav li.has-child>a').on('click', function(e){
-            e.preventDefault();
-            $('.main-nav li.has-child>ul').slideUp();
-            $(this).next('ul').slideToggle();
+            e.preventDefault();             
+            $(this).next('ul').slideToggle().toggleClass('open');
         })
     }; 
 
