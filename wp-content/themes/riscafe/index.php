@@ -1,6 +1,7 @@
 <html data-livestyle-extension="available" class="">
 <?=render_head()?>
 <body class="">
+<?=render_body_gtm()?>
 <div id="site_container">
     <div class="site_wrapper">
         <div class="container">

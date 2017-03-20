@@ -7,6 +7,7 @@ $image_final = wp_get_attachment_image_url($image['id'], 'large');
 <?=render_head()?>
 
 <body class="">
+<?=render_body_gtm()?>
 <div id="site_container">
     <div class="site_wrapper">
         <div class="container">
