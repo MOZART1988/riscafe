@@ -66,7 +66,7 @@ if (!session_id()) {
                                 </div>
                                 <div class="cart-item--info">
                                     <p><?=$product->post_title?></p>
-                                    <div class="cart-item--amount">Количетсво: <?=$count?></div>
+                                    <div class="cart-item--amount">Количеcтво: <?=$count?></div>
                                     <div class="cart-item--price">₸<?=get_field('product_price', $product)?></div>
                                 </div>
                             </div>

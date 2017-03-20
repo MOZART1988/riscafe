@@ -74,6 +74,20 @@ function render_head()
     ';
 }
 
+function generate_slider()
+{
+    return '
+    <div class="cycle-slideshow" data-cycle-timeout=5000 data-cycle-caption-plugin=caption2 data-cycle-overlay-fx-out="slideUp" data-cycle-overlay-fx-in="slideDown">
+        <div class="cycle-overlay"></div>
+        <img src="'.esc_url( get_template_directory_uri() ).'/images/slide1.jpg" data-cycle-desc="Стейки, шашлыки, крылышки BBQ">
+        <img src="'.esc_url( get_template_directory_uri() ).'/images/slide4.jpg" data-cycle-desc="В день рождения 20% скидка на все">
+        <img src="'.esc_url( get_template_directory_uri() ).'/images/slide5.jpg" data-cycle-desc="Суши, роллы и целые сеты">
+        <img src="'.esc_url( get_template_directory_uri() ).'/images/slide2.jpg" data-cycle-desc="Вкуснейщая пицца">
+        <img src="'.esc_url( get_template_directory_uri() ).'/images/slide3.jpg" data-cycle-desc="При заказе на сумму от 5000 тенге - напиток в подарок">
+    </div>
+    ';
+}
+
 if (!function_exists('riscafe_category_item')) :
     function riscafe_category_item($category)
     {
