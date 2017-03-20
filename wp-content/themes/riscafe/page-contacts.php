@@ -41,7 +41,9 @@ $image_final = wp_get_attachment_image_url($image['id'], 'large');
                 </div>
                 <div class="map-block">
                     <img src="<?=esc_url( get_template_directory_uri() )?>/images/map.png" alt="">
-                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A701001fedee7086e26dbf0c6cb2435af0a7b900f58ff5bc2152defa79f9d812f&amp;width=475&amp;height=348&amp;lang=ru_RU&amp;scroll=true"></script>
+                    <div class="map-item">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A701001fedee7086e26dbf0c6cb2435af0a7b900f58ff5bc2152defa79f9d812f&amp;width=100%&amp;height=348&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>                    
                 </div>
                 <div class="ajax-form">
                 <form id="feedback-form" class="feedback-form">

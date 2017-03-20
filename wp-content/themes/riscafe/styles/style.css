@@ -1017,8 +1017,9 @@ body.has-overlay{
     font-weight: bold;
 }
 
-ymaps {
+.map-item {
     display: inline-block !important;
+    width: 475px;
 }
 
 .feedback-form {
@@ -1276,7 +1277,7 @@ a.menu-toggle {
     .map-block img {
         max-width: 100%;
     }
-    .map-block ymaps {
+    .map-block .map-item {
         width: 100% !important;
     }
     .feedback-form {
