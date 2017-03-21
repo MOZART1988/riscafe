@@ -91,10 +91,11 @@ function generate_slider()
 if (!function_exists('riscafe_category_item')) :
     function riscafe_category_item($category)
     {
+        $url = !empty(get_field('category_url', $category)) ? get_field('category_url', $category) : get_term_link($category);
         $result = [];
         $result[] = '<div class="menu-item">';
-        $result[] = '<a href="' . get_term_link($category) . '"><img src="' . z_taxonomy_image_url($category->term_id, 'medium') . '" alt=""></a>';
-        $result[] = '<a href="' . get_term_link($category) . '" class="menu-item--link">' . $category->name . ' ></a>';
+        $result[] = '<a href="' .  $url . '"><img src="' . z_taxonomy_image_url($category->term_id, 'medium') . '" alt=""></a>';
+        $result[] = '<a href="' .  $url . '" class="menu-item--link">' . $category->name . ' ></a>';
         $result[] = '</div>';
 
         return join("\n", $result);
