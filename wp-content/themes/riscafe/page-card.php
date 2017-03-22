@@ -69,7 +69,7 @@ if (!session_id()) {
                         </form>
                     </div>
                     <div class="cart-amount-block">
-                        Сумма: <span></span>
+                        Сумма: <span>₸<?=update_summ()?></span>
                         <div class="cart-note">Бесплатная доставка при заказе на сумму от 3 000 тенге.</div>
                         <a href="/order/" class="red-button pull-right">Оформить заявку</a>
                     </div>

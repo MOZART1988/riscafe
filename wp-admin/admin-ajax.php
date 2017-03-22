@@ -89,7 +89,7 @@ if (!empty($_GET['custom_action'])) {
             if (!empty($_SESSION['card'])) {
                 foreach ($_SESSION['card'] as $id => $value) {
                     $product = get_post($id);
-                    $summ += $value * get_field('product_price', $product);
+                    $summ = $summ + ($value * get_field('product_price', $product));
                 }
             }
             echo '₸'.intval($summ);
@@ -100,23 +100,21 @@ if (!empty($_GET['custom_action'])) {
             $_SESSION['card'][$id]--;
         break;
         case 'send_order':
-            $body = [];
             $summ = 0;
+            $body = [];
             if (!empty($_SESSION['card'])) {
                 $body[] = '<p>Имя '.$_POST['name'].'</p>';
                 $body[] = '<p>Email '.$_POST['email'].'</p>';
                 $body[] = '<p>Адрес '.$_POST['adress'].'</p>';
                 $body[] = '<p>Город '.$_POST['city'].'</p>';
                 $body[] = '<p>Телефон '.$_POST['phone'].'</p>';
-
+                $body[] = '<p>Детали корзины</p>';
                 foreach ($_SESSION['card'] as $id => $count) {
-                    $summ = $summ + $count * get_field('product_price', $product);
                     $product = get_post($id);
-                    $body[] = '<p>Детали корзины</p>';
+                    $summ = $summ + ($count * get_field('product_price', $product));
                     $body[] = '<p>'.$product->post_title.'------ '.$count.' порций/<span>Цена: ₸'.get_field('product_price', $product).'</span></p>';
                 }
-                $body[] = '<p>Итого : '.$summ.'</p>';
-
+                $body[] = '<p>Итого : '.$summ .'</p>';
                 if (wp_mail(get_option('admin_email'), 'Новый заказ в магазине RisCafe', join("\n", $body))) {
                     unset($_SESSION['card']);
                     exit('success');

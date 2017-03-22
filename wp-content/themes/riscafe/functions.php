@@ -136,3 +136,15 @@ if (!function_exists('has_term_have_children')):
         return true;
     }
 endif;
+
+function update_summ()
+{
+    $summ = 0;
+    if (!empty($_SESSION['card'])) {
+        foreach ($_SESSION['card'] as $id => $value) {
+            $product = get_post($id);
+            $summ = $summ + ($value * get_field('product_price', $product));
+        }
+    }
+    return intval($summ);
+}

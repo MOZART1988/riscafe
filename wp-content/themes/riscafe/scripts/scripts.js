@@ -1,6 +1,5 @@
 $(document).ready(function() {
     card_count();
-    update_summ($('.cart-amount-block').find('span'));
     var sidecartOpen = function () {
         $('.cart-overlay').toggleClass('open');
         $('.sideCart').toggleClass('open');
@@ -67,7 +66,6 @@ $(document).ready(function() {
         count = count < 1 ? 1 : count;
         if ($input.val() > 1) {
             update_card_minus_one($(this).parent().attr('data-id'));
-            update_summ($('.cart-amount-block').find('span'));
             card_count();
         }
         $input.val(count);
@@ -81,7 +79,6 @@ $(document).ready(function() {
         $input.val(count);
         $input.change();
         update_card($(this).parent().attr('data-id'), 1, false);
-        update_summ($('.cart-amount-block').find('span'));
         calculate_one_position(count, $(this).parent().attr('data-price'), $(this).parent().parent().next().find('.counter'));
         return false;
     });
@@ -101,6 +98,18 @@ $(document).ready(function() {
     function calculate_one_position(count, price, container) {
         result = parseInt(count) * parseInt(price);
         container.html(result);
+        calculate_card();
+    }
+
+    function calculate_card()
+    {
+        summ = 0;
+        $('.for-one-position').each(function(){
+            summ = summ + parseInt($(this).find('.counter').html());
+        });
+        $('.cart-amount-block').find('span').html('₸'+summ);
+
+        console.log(summ);
     }
 
     function update_card(product_id, count, is_open) {
@@ -136,11 +145,10 @@ $(document).ready(function() {
 
     function update_summ(container) {
         $.ajax({
-            url: "/wp-admin/admin-ajax.php",
+            url: "/card/",
             type: "GET",
-            data: "custom_action=update_summ",
             success: function (data) {
-                container.html(data);
+                container.html($(data).find('.cart-amount-block').find('span').html());
             }
         });
     }
@@ -171,8 +179,6 @@ $(document).ready(function() {
             dataType: 'html',
             data: form.serialize(),
             success: function (data) {
-
-
                 if (data == 'success') {
                     $('.main-content.white-bg').html('<h1>Спасибо за Ваш заказ! Мы обязательно свяжемся с Вами в ближайшее время</h1>');
                 } else {
